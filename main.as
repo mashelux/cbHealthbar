@@ -1,12 +1,17 @@
 using namespace CB;
 using namespace B3D;
 
+Image HealthMeter;
+
 void Hook_Initialize() {
-    
+    HealthMeter = LoadImage("GFX\\HealthMeter.png");
 }
 
 void Hook_DrawHUD() {
-
+    float x = 80 * Options::HUDScaleFactor;
+    float y = 162 * Options::HUDScaleFactor;
+    float width = 204 * Options::HUDScaleFactor;
+    DrawBar(HealthMeter, x, y, width, Player::Bloodloss / 100.0);
 }
 
 // DrawBar() from CB, implemented for AS by mashelux
@@ -16,7 +21,7 @@ void Hook_DrawHUD() {
 // width: Self explanatory
 // filled: How much filled is the bar (100 = full, 0 = depleted)
 // centerX: Unsure what this does, but in CB its set to false most of the time
-void DrawBar(Image img, int x, int y, int width, int filled, bool centerX = false) {
+void DrawBar(Image img, float x, float y, float width, float filled, bool centerX = false) {
     int spacing = img.Width + 2;
     width = int(width / spacing) * spacing + 3;
     
