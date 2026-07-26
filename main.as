@@ -14,6 +14,10 @@ bool Hook_DrawHUD() {
     return false;
 }
 
+// FIXME: hud scale factor bugging out meter and icon
+// FIXME: hud offset not affecting meter and icon
+// FIXME: different resolutions break meter and icon
+
 void DrawHealthMeter() {
     int x = 80 * Menu::HUDScale;
     int y = 582 * Menu::HUDScale;
