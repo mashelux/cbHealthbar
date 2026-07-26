@@ -8,7 +8,6 @@ void Hook_Initialize() {
 }
 
 bool Hook_DrawHUD() {
-    // TODO: implement health icon
     DrawHealthBar();
     return false;
 }
@@ -22,5 +21,5 @@ void DrawHealthBar() {
 }
 
 void DrawHealthIcon() {
-
+    // TODO: implement health icon
 }
