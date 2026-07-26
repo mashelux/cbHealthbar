@@ -17,7 +17,8 @@ void DrawHealthBar() {
     int x = 80 * Menu::HUDScale;
     int y = 582 * Menu::HUDScale;
     int width = 204 * Menu::HUDScale;
-    Menu::DrawBar(HealthMeter, x, y, width, Player::Bloodloss / 100.0);
+    float filled = 100.0 - Player::Bloodloss;
+    Menu::DrawBar(HealthMeter, x, y, width, filled);
 }
 
 void DrawHealthIcon() {
