@@ -20,7 +20,7 @@ bool Hook_DrawHUD() {
 
 void DrawHealthMeter() {
     int x = 80 * Menu::HUDScale;
-    int y = 582 * Menu::HUDScale;
+    int y = 945 * Menu::HUDScale;
     int width = 204 * Menu::HUDScale;
     float filled = (100.0 - Player::Bloodloss) / 100.0;
     Menu::DrawBar(HealthMeter, x, y, width, filled);
@@ -28,7 +28,7 @@ void DrawHealthMeter() {
 
 void DrawHealthIcon() {
     int x = 30 * Menu::HUDScale;
-    int y = 582 * Menu::HUDScale;
+    int y = 945 * Menu::HUDScale;
     int width = 30 * Menu::HUDScale;
     int height = 30 * Menu::HUDScale;
     SetColor(255, 255, 255);
