@@ -10,6 +10,7 @@ void Hook_Initialize() {
 
 bool Hook_DrawHUD() {
     DrawHealthMeter();
+    DrawHealthIcon();
     return false;
 }
 
@@ -22,5 +23,7 @@ void DrawHealthMeter() {
 }
 
 void DrawHealthIcon() {
-    // TODO: implement health icon
+    int x = 30 * Menu::HUDScale;
+    int y = 582 * Menu::HUDScale;
+    HealthIcon.Draw(x, y);
 }
