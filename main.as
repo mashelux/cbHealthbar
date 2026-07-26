@@ -25,5 +25,9 @@ void DrawHealthMeter() {
 void DrawHealthIcon() {
     int x = 30 * Menu::HUDScale;
     int y = 582 * Menu::HUDScale;
+    int width = 30 * Menu::HUDScale;
+    int height = 30 * Menu::HUDScale;
+    SetColor(255, 255, 255);
+    Rect(x - 1 , y - 1, width + 2, height + 2);
     HealthIcon.Draw(x, y);
 }
