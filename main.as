@@ -8,9 +8,18 @@ void Hook_Initialize() {
 }
 
 bool Hook_DrawHUD() {
+    // TODO: implement health icon
+    DrawHealthBar();
+    return false;
+}
+
+void DrawHealthBar() {
     int x = 80 * Menu::HUDScale;
     int y = 582 * Menu::HUDScale;
     int width = 204 * Menu::HUDScale;
     Menu::DrawBar(HealthMeter, x, y, width, Player::Bloodloss / 100.0);
-    return false;
+}
+
+void DrawHealthIcon() {
+
 }
