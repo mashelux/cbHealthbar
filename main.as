@@ -19,18 +19,18 @@ bool Hook_DrawHUD() {
 // FIXME: different resolutions break meter and icon
 
 void DrawHealthMeter() {
-    int x = 80 * Menu::HUDScale;
-    int y = 945 * Menu::HUDScale;
-    int width = 204 * Menu::HUDScale;
+    int x = 80 * HUD::Scale;
+    int y = 945 * HUD::Scale;
+    int width = 204 * HUD::Scale;
     float filled = (100.0 - Player::Bloodloss) / 100.0;
-    Menu::DrawBar(HealthMeter, x, y, width, filled);
+    HUD::DrawBar(HealthMeter, x, y, width, filled);
 }
 
 void DrawHealthIcon() {
-    int x = 30 * Menu::HUDScale;
-    int y = 945 * Menu::HUDScale;
-    int width = 30 * Menu::HUDScale;
-    int height = 30 * Menu::HUDScale;
+    int x = 30 * HUD::Scale;
+    int y = 945 * HUD::Scale;
+    int width = 30 * HUD::Scale;
+    int height = 30 * HUD::Scale;
     SetColor(255, 255, 255);
     Rect(x - 1 , y - 1, width + 2, height + 2);
     HealthIcon.Draw(x, y);
