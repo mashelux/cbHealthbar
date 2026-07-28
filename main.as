@@ -3,6 +3,8 @@ using namespace B3D;
 
 Image@ HealthMeter, HealthIcon;
 
+int _y = 945;
+
 void Hook_Initialize() {
     HealthMeter = LoadImage("GFX\\HealthMeter.png", 1.0);
     HealthIcon = LoadImage("GFX\\HealthIcon.png", 1.0);
@@ -19,16 +21,16 @@ bool Hook_DrawHUD() {
 // FIXME: different resolutions break meter and icon
 
 void DrawHealthMeter() {
-    int x = 80 * HUD::Scale;
-    int y = 945 * HUD::Scale;
+    int x = HUD::StartX + 80 * HUD::Scale;
+    int y = HUD::EndY - _y * HUD::Scale;
     int width = 204 * HUD::Scale;
     float filled = (100.0 - Player::Bloodloss) / 100.0;
-    HUD::DrawBar(HealthMeter, x, y, width, filled);
+    Menu::DrawBar(HealthMeter, x, y, width, filled);
 }
 
 void DrawHealthIcon() {
-    int x = 30 * HUD::Scale;
-    int y = 945 * HUD::Scale;
+    int x = HUD::StartX + 30 * HUD::Scale;
+    int y = HUD::EndY - _y * HUD::Scale;
     int width = 30 * HUD::Scale;
     int height = 30 * HUD::Scale;
     SetColor(255, 255, 255);
