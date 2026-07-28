@@ -12,12 +12,12 @@ bool Hook_DrawHUD() {
     // meter
     int width = 204 * HUD::Scale;
     int x = HUD::StartX + 80 * HUD::Scale;
-    int y = HUD::EndY - 95 * HUD::Scale;
+    int y = HUD::EndY - 135 * HUD::Scale;
     Menu::DrawBar(HealthMeter, x, y, width, (100.0 - Player::Bloodloss) / 100.0);
     
     // icon
     SetColor(255, 255, 255);
-    Rect(x - 51 * HUD::Scale, y - 1, 32 * HUD::Scale, 32 * HUD::Scale, 0);
+    Rect(x - 50 * HUD::Scale - 1, y - 1, 30 * HUD::Scale + 2, 32 * HUD::Scale + 2, 0);
     HealthIcon.Draw(x - 50 * HUD::Scale, y);
 
     return false;
