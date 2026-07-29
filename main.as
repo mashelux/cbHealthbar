@@ -4,8 +4,8 @@ using namespace B3D;
 Image@ HealthMeter, HealthIcon;
 
 void Hook_Initialize() {
-    HealthMeter = LoadImage("GFX\\HealthMeter.png", 1.0);
-    HealthIcon = LoadImage("GFX\\HealthIcon.png", 1.0);
+    HealthMeter = LoadImageHUDScaled("GFX\\HealthMeter.png");
+    HealthIcon = LoadImageHUDScaled("GFX\\HealthIcon.png");
 }
 
 bool Hook_DrawHUD() {
