@@ -1,3 +1,4 @@
 *cbHealthbar
 
-    mashelux
+    mashelux (Mod Creator)
+    simoxus (Icons)
